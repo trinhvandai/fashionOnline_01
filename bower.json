@@ -1,0 +1,26 @@
+{
+  "name": "fashionOnline_01",
+  "description": "",
+  "main": "",
+  "authors": [
+    "James Nguyen <frankierockie259@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jamesnguyen259/fashionOnline_01",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "#3.0.3",
+    "jquery": "#1.10.2",
+    "animate.css": "#3.7.0",
+    "font-awesome": "#4.0.3",
+    "scrollup": "#2.4.0",
+    "jquery-prettyPhoto": "#3.1.6",
+    "responsive": "#1.4.2"
+  }
+}
