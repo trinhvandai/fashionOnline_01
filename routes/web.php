@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
+
+Route::group(['middleware' => 'locale'], function () {
+    Route::get('change-language/{language}', 'HomeController@changeLanguage')
+        ->name('user.change-language');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
