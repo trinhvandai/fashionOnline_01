@@ -6,14 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoryProduct extends Model
 {
-    protected $table="category_products";
-    public $timestamp=true;
-    public function Category()
+    protected $table = 'category_products';
+    public $timestamp = true;
+    
+    public function category()
     {
-    	return $this->belongsTo('App\Category','category_id','id');
+        return $this->belongsTo('App\Category', 'category_id', 'id');
     }
-    public function Product()
+
+    public function product()
     {
-    	return $this->belongsTo('App\Product','product_id','id');
+        return $this->belongsTo('App\Product', 'product_id', 'id');
     }
 }

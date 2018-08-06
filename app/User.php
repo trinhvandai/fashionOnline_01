@@ -24,19 +24,23 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+    'remember_token',
     ];
-    public $timestamp=true;
-    public function Post()
+    public $timestamp = true;
+    
+    public function post()
     {
-        return $this->hasMany('App\Post','user_id','id');
+        return $this->hasMany('App\Post', 'user_id', 'id');
     }
-    public function Order()
+
+    public function order()
     {
-        return $this->hasMany('App\Order','user_id','id');
+        return $this->hasMany('App\Order', 'user_id', 'id');
     }
-    public function Comment()
+
+    public function comment()
     {
-        return $this->hasMany('App\Comment','user_id','id');
+        return $this->hasMany('App\Comment', 'user_id', 'id');
     }
 }
