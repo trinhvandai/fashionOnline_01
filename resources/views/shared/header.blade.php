@@ -48,11 +48,22 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#"><i class="fa fa-user"></i> {{ __('Account') }}</a></li>
+                                    <li><a href="{{url('auth/update')}}"><i class="fa fa-user"></i> {{Auth::check() ? Auth::user()->name : __('Account')}}</a></li>
                                     <li><a href="#"><i class="fa fa-star"></i> {{ __('Wishlist') }}</a></li>
                                     <li><a href="#"><i class="fa fa-crosshairs"></i> {{ __('Checkout') }}</a></li>
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> {{ __('Cart') }}</a></li>
-                                    <li><a href="#"><i class="fa fa-lock"></i> {{ __('Login') }}</a></li>
+                                    @if (Auth::check())
+                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="ti-power-off p-r-10"></i>
+                            <span>{{ __('logout') }}</span>
+                        </a>
+                        {!! Form::open(['method' => 'POST', 'url' => 'logout', 'id' => 'logout-form']) !!} 
+                        {!! Form::close() !!}</li>
+                                    @else
+                                    <li><a href="{{('register')}}">{{ __('Sign up') }}</a></li>
+                                    <li><a href="{{('login')}}">{{ __('Login') }}</a></li>
+                                    @endif
+                                    
                                 </ul>
                             </div>
                         </div>

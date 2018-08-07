@@ -25,3 +25,5 @@ Route::group(['middleware' => 'locale'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('auth/update','ProfileController@edit');
+Route::post('auth/update','ProfileController@update')->name('user_update');
