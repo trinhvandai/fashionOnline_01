@@ -28,10 +28,10 @@ class UserEditFormRequest extends FormRequest
             'email' => 'required|string|email|max:255|unique:users',
             'description' => 'string|max:255',
             'address' => 'string|max:255',
-            'phone' => 'required|digits:11',
+            'phone' => 'digits:11',
             'password' => 'required|string|min:6|same:password',
             'password_confirm' => 'required|string|min:6|same:password',
-            'image_url' =>  'mimes: jpeg, jpg, png',
+            // 'image_url' =>  'mimes: jpeg, jpg, png',
         ];
     }
 }
