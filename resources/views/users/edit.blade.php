@@ -13,6 +13,11 @@
                 @foreach ($errors->all() as $error)
                 <p class="alert alert-danger">{{ $error }}</p>
                 @endforeach
+                @if (session('status'))
+                <div class="alert alert-success">
+                {{ session('status') }}
+                </div>
+                @endif
                 {{ csrf_field() }}
                 <img src="{{ $user->image_url }}" class="m-x-auto img-fluid img-circle" alt="avatar" />
                 <h6 class="m-t-2">Upload a different photo</h6>
