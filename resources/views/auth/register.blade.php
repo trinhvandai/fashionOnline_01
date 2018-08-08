@@ -14,10 +14,8 @@
                         @endforeach
                     {!! Form::text( 'name', null, ['placeholder' => __('Your name') ]); !!}
                     {!! Form::email( 'email', null, ['placeholder' => __('Your email address') ]); !!}
-                    {!! Form::password( 'password', null, ['placeholder' => __('Password') ]); !!}
-                    {!! Form::password( 'password_confirmation', null, ['placeholder' => __('Confirm password') ]); !!}
-                    <!-- <input type="password" class="form-control" placeholder=" {{ __('Password') }} " name="password" />
-                    <input type="password" class="form-control" placeholder=" {{ __('Confirm password') }} " name="password_confirmation" /> -->
+                    {!! Form::password( 'password', null , ['placeholder' => __('Password') ]); !!}
+                    {!! Form::password( 'password_confirmation' , null , ['placeholder' => __('Confirm password') ]); !!}
                     {{ Form::button('Sign up', ['type' => 'submit', 'class' => 'btn btn-default'] )  }}
                     {!! Form::close() !!}
                 </div>

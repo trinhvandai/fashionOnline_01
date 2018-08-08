@@ -10,75 +10,66 @@
         </div>
         <div class="col-lg-8 push-lg-4 personal-info">
             {!! Form::open(['method' => 'POST' , 'route' => 'users.update']) !!}
-            <!-- <form role="form" method="POST" action="{{ route('users.update') }}" > -->
                 @foreach ($errors->all() as $error)
                 <p class="alert alert-danger">{{ $error }}</p>
                 @endforeach
-                {{ csrf_field() }}
                 <img src="{{ $user->image_url }}" class="m-x-auto img-fluid img-circle" alt="avatar" />
                 <h6 class="m-t-2">Upload a different photo</h6>
                 <label class="custom-file">
-                    {! Form::file('image_url'); !}
-                  <!-- <input name="image_url" type="file" id="image_url" class="custom-file-input"> -->
+                    {!! Form::file('image'); !!}
                   <span class="custom-file-control">Choose file</span>
                 </label>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Full name</label>
                     <div class="col-lg-9">
-                        {!! Form::text( 'name', null, ['class' => 'form-control' , 'placeholder' => '$user->name' ]); !!}
-                        <!-- <input name="name" class="form-control" type="text" value="{{ $user->name }}" /> -->
+                        {!! Form::text( 'name', null, ['class' => 'form-control' , 'placeholder' => $user->name ]); !!}
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Email</label>
                     <div class="col-lg-9">
-                        {!! Form::email( 'email', null, ['class' => 'form-control' , 'placeholder' => '$user->email' ]); !!}
-                        <!-- <input name="email" class="form-control" type="email" value="{{ $user->email }}" /> -->
+                        {!! Form::email( 'email', null, ['class' => 'form-control' , 'placeholder' => $user->email ]); !!}
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Address</label>
                     <div class="col-lg-9">
-                        {!! Form::text( 'address', null, ['class' => 'form-control' , 'placeholder' => '$user->name' ]); !!}
-                        <!-- <input name="address" class="form-control" type="text" value="{{ $user->address }}" /> -->
+                        {!! Form::text( 'address', null, ['class' => 'form-control' , 'placeholder' => $user->address ]); !!}
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Description</label>
                     <div class="col-lg-9">
-                        {!! Form::text( 'description', null, ['class' => 'form-control' , 'placeholder' => '$user->description' ]); !!}
-                        <!-- <input name="description" class="form-control" type="text" value="{{ $user->description }}" /> -->
+                        {!! Form::text( 'description', null, ['class' => 'form-control' , 'placeholder' => $user->description ]); !!}
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Phone</label>
                     <div class="col-lg-9">
-                        {!! Form::text( 'phone', null, ['class' => 'form-control' , 'placeholder' => '$user->phone' ]); !!}
-                        <!-- <input name="phone" class="form-control" type="text" value="" placeholder="{{ $user->phone }}" /> -->
+                        {!! Form::text( 'phone', null, ['class' => 'form-control' , 'placeholder' => $user->phone ]); !!}
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Password</label>
                     <div class="col-lg-9">
-                        {!! Form::password( 'password', null, ['class' => 'form-control' , 'placeholder' => __('Password') ]); !!}
-                        <!-- <input name="password" class="form-control" type="password" value="" /> -->
+                        {!! Form::password( 'password', null, ['class' => 'form-control' ]); !!}
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
                     <div class="col-lg-9">
-                        <input name="password_confirm" class="form-control" type="password" value="" />
+                        {!! Form::password('password_confirmation', null, ['class' => 'form-control' ]); !!}
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label"></label>
                     <div class="col-lg-9">
-                        <input type="submit" class="btn btn-primary" value="Update your profile" />
-                        <input type="reset" class="btn btn-primary" value="Cancel" />
+                        {!! Form::button('Update your profile', ['type' => 'submit', 'class' => 'btn btn-default']) !!}
+                        {!! Form::button('Cancel', ['type' => 'reset', 'class' => 'btn btn-default']) !!}
                     </div>
                 </div>
             </form>
-            <!-- {!! Form::close() !!} -->
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

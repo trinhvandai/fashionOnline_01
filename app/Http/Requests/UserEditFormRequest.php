@@ -29,9 +29,8 @@ class UserEditFormRequest extends FormRequest
             'description' => 'string|max:255',
             'address' => 'string|max:255',
             'phone' => 'digits:11',
-            'password' => 'required|string|min:6|same:password',
-            'password_confirm' => 'required|string|min:6|same:password',
-            // 'image_url' =>  'mimes: jpeg, jpg, png',
+            'password' => 'required|string|min:6|same:password_confirmation',
+            'password_confirmation' => 'required|string|min:6',
         ];
     }
 }

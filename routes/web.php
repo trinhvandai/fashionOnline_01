@@ -11,8 +11,6 @@
 |
 */
 
-//Route::get('/', 'HomeController@index');
-
 Route::get('/', function () {
     return view('home');
 });
@@ -21,13 +19,6 @@ Route::get('users', ['as' => 'users.show', 'uses' => 'UserController@show']);
 
 Route::get('users/edit', ['as' => 'users.edit', 'uses' => 'UserController@edit']);
 Route::post('users/edit', ['as' => 'users.update', 'uses' => 'UserController@update']);
-
-// Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
-
-// Route::group(['middleware' => 'locale'], function () {
-//     Route::get('change-language/{language}', 'HomeController@changeLanguage')
-//         ->name('user.change-language');
-// });
 
 Auth::routes();
 
