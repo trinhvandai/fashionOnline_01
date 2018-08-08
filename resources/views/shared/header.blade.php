@@ -48,7 +48,7 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="{{ Auth::check() ? route('users.show', Auth::user()->id) : route('login') }}"><i class="fa fa-user"></i> {{ Auth::check() ? Auth::user()->name : __('Account') }}</a></li>
+                                    <li><a href="{{ Auth::check() ? route('users.show') : route('login') }}"><i class="fa fa-user"></i> {{ Auth::check() ? Auth::user()->name : __('Account') }}</a></li>
                                     <li><a href=""><i class="fa fa-star"></i> {{ __('Wishlist') }}</a></li>
                                     <li><a href="#"><i class="fa fa-crosshairs"></i> {{ __('Checkout') }}</a></li>
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> {{ __('Cart') }}</a></li>

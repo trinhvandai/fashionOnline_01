@@ -11,7 +11,7 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ asset('images/shop/product7.jpg' )}}" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ asset("$user->image_url") }}" class="img-circle img-responsive"> </div>
                 <div class=" col-md-9 col-lg-9 ">
                   <table class="table table-user-information">
                     <tbody>
@@ -25,12 +25,12 @@
                       </tr>
                       <tr>
                         <td>Description: </td>
-                        <td>{{ $user->description }}</td>
+                        <td><textarea id=" name" spellcheck="false" placeholder=" {{ $user->description }}"></textarea></td>
                       </tr>
                       <tr>
                         <tr>
                             <td>Home Address</td>
-                            <td>{{ $user->address }}</td>
+                            <td><textarea id="address" spellcheck="false" placeholder=" {{ $user->address }}"></textarea></td>
                       </tr>
                             <td>Phone Number</td>
                             <td>{{ $user->phone }}</td>
@@ -40,7 +40,7 @@
                 </div>
               </div>
                 <span class="pull-right">
-                            <a href="#" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="{{ route('users.edit') }}" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
                 </span>
             </div>
           </div>

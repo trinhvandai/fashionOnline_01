@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('users/{id}', ['as' => 'users.show', 'uses' => 'UserController@show']);
+Route::get('users', ['as' => 'users.show', 'uses' => 'UserController@show']);
 
-Route::get('users/{id}/edit', ['as' => 'users.edit', 'uses' => 'UserController@edit']);
-Route::post('users/{id}/update', ['as' => 'users.update', 'uses' => 'UserController@update']);
+Route::get('users/edit', ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+Route::post('users/edit', ['as' => 'users.update', 'uses' => 'UserController@update']);
 
 // Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
 

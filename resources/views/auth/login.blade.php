@@ -20,11 +20,11 @@
                     </span>
                     {{ Form::button('Sign in', ['type' => 'submit', 'class' => 'btn btn-default'] )  }}
                     {!! Form::close() !!}
+                    </div><!--/login form-->
                     <div class="btn-toolbar" role="toolbar" aria-label="...">
                         <a class="btn btn-link" href="{{ route('password.request') }}"> {{ __('Forgot Your Password?') }}</a>
                         <a class="btn btn-link" href="{{ route('register') }}"> {{ __('Sign up') }}</a>
                     </div>
-                </div><!--/login form-->
             </div>
         </div>
     </div>
