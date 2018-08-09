@@ -22,6 +22,7 @@
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('images/ico/apple-touch-icon-114-precomposed.png') }}">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('images/ico/apple-touch-icon-72-precomposed.png') }}">
         <link rel="apple-touch-icon-precomposed" href="{{ asset('images/ico/apple-touch-icon-57-precomposed.png') }}">
+        <link href="{{ asset('bower_components/datatables.net-dt/css/jquery.dataTables.css') }}">
     </head><!--/head-->
 
     <body>
@@ -34,5 +35,6 @@
         <!-- <script src="{{ asset('js/price-range.js') }}"></script> -->
         <script src="{{ asset('bower_components/jquery-prettyPhoto/js/jquery.prettyPhoto.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
+        <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.js') }}"></script>
     </body>
 </html>

@@ -120,7 +120,3 @@
                                 </ul>
                             </div>
                         </div><!--/brands_products-->
-
-                        <div class="shipping text-center"><!--shipping-->
-                            <img src="{{ asset('images/home/shipping.jpg') }}" alt="" />
-                        </div><!--/shipping-->

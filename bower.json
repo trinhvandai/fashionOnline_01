@@ -21,6 +21,7 @@
     "font-awesome": "#4.0.3",
     "scrollup": "#2.4.0",
     "jquery-prettyPhoto": "#3.1.6",
-    "responsive": "#1.4.2"
+    "responsive": "#1.4.2",
+    "datatables.net-dt": "^3.2.2"
   }
 }

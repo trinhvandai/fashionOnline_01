@@ -85,8 +85,8 @@
                             </div>
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li><a href="#" >{{ __('Home') }}</a></li>
-                                    <li><a href="#" >{{ __('Products') }}</a></li>
+                                    <li><a href="{{route('home')}}" >{{ __('Home') }}</a></li>
+                                    <li><a href="{{('products')}}" >{{ __('Products') }}</a></li>
                                     <li><a href="#" >{{ __('Blog') }}</a></li>
                                     <li><a href="#" >{{ __('Contact Us') }}</a></li>
                                 </ul>
