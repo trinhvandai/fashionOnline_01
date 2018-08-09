@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use DB;
 Use Illuminate\Database\Eloquent\Model;
 Use Faker\Factory as Faker;
 
@@ -14,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(BrandsTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+
         // $this->call(UsersTableSeeder::class);
         /*$faker =Faker::create();
         foreach(range(1,20)as$index){

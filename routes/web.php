@@ -31,3 +31,4 @@ Route::get('/products','ProductController@products');
 Route::get('/products/details/{id}','ProductController@product_details');
 Route::get('cart','CartController@cart');
 Route::post('cart','CartController@cart');
+Route::get('find','SearchController@find');

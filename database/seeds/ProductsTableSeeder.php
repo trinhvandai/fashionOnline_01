@@ -13,6 +13,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
+        factory(App\Product::class, 10)->create();
         /* $faker =Faker::create();
         foreach(range(1,20)as$index){
         	DB::table('products')->insert([

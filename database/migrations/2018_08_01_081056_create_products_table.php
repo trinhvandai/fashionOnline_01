@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
                 ->references('id')
                 ->on('brands')
                 ->onDelete('cascade');
-            $table->string('image_url');          
+            $table->string('image_url')->nullable();          
             $table->timestamps();
 
         });
