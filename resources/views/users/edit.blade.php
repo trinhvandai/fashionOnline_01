@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "{{ __('Update your profile') }}")
+@section('title', 'Update your profile')
 @section('content')
 <div class="container">
     <div class="row m-y-2">
@@ -13,7 +13,7 @@
                 @foreach ($errors->all() as $error)
                 <p class="alert alert-danger">{{ $error }}</p>
                 @endforeach
-                <img src="{{ $user->image_url }}" class="m-x-auto img-fluid img-circle" alt="avatar" />
+                <img src="{{ asset("$user->image_url") }}" class="m-x-auto img-fluid img-circle" alt="avatar" />
                 <h6 class="m-t-2">Upload a different photo</h6>
                 <label class="custom-file">
                     {!! Form::file('image'); !!}
@@ -52,13 +52,13 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Password</label>
                     <div class="col-lg-9">
-                        {!! Form::password( 'password', null, ['class' => 'form-control' ]); !!}
+                        {!! Form::password( 'password', array('class' => 'form-control')) !!}
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
                     <div class="col-lg-9">
-                        {!! Form::password('password_confirmation', null, ['class' => 'form-control' ]); !!}
+                        {!! Form::password('password_confirmation', array('class' => 'form-control')) !!}
                     </div>
                 </div>
                 <div class="form-group row">

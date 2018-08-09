@@ -44,9 +44,12 @@
                   </table>
                 </div>
               </div>
+              <div class="panel-footer">
+                <a data-original-title="Make a post" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-file"></i></a>
                 <span class="pull-right">
                             <a href="{{ route('users.edit') }}" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
                 </span>
+              </div>
             </div>
           </div>
         </div>

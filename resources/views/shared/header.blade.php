@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="logo pull-left">
-                                <a href="#"><img src="{{ asset('images/home/logo.png') }}" alt="" /></a>
+                                <a href="{{ route('home') }}"><img src="{{ asset('images/home/logo.png') }}" alt="" /></a>
                             </div>
                             <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -83,7 +83,7 @@
                                 <ul class="nav navbar-nav collapse navbar-collapse">
                                     <li><a href="{{ route('home') }}" >{{ __('Home') }}</a></li>
                                     <li><a href="#" >{{ __('Products') }}</a></li>
-                                    <li><a href="#" >{{ __('Blog') }}</a></li>
+                                    <li><a href="{{ route('posts.index') }}" >{{ __('Blog') }}</a></li>
                                     <li><a href="#" >{{ __('Contact Us') }}</a></li>
                                 </ul>
                             </div>
