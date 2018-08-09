@@ -22,4 +22,6 @@ Route::post('users/edit', ['as' => 'users.update', 'uses' => 'UserController@upd
 
 Auth::routes();
 
+Route::get('blogs', ['as' => 'blogs.index', 'uses' => 'BlogsController@index']);
+
 Route::get('/home', 'HomeController@index')->name('home');
