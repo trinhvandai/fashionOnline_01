@@ -15,7 +15,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','image_url', 'address', 'description'
+        'name',
+        'email',
+        'password',
+        'image_url',
+        'address',
+        'description',
     ];
 
     /**
@@ -25,7 +30,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-    'remember_token',
+        'remember_token',
     ];
     public $timestamp = true;
 
