@@ -16,7 +16,9 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ asset("$user->image_url") }}" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center">
+                  <img alt="User Pic" src="{{ asset("$user->image_url") }}" class="img-circle img-responsive">
+                  </div>
                 <div class=" col-md-9 col-lg-9 ">
                   <table class="table table-user-information">
                     <tbody>
@@ -33,21 +35,21 @@
                         <td><textarea id=" name" spellcheck="false" placeholder=" {{ $user->description }}"></textarea></td>
                       </tr>
                       <tr>
-                        <tr>
-                            <td>Home Address</td>
-                            <td><textarea id="address" spellcheck="false" placeholder=" {{ $user->address }}"></textarea></td>
+                      <tr>
+                          <td>Home Address</td>
+                          <td><textarea id="address" spellcheck="false" placeholder=" {{ $user->address }}"></textarea></td>
                       </tr>
-                            <td>Phone Number</td>
-                            <td>{{ $user->phone }}</td>
+                          <td>Phone Number</td>
+                          <td>{{ $user->phone }}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
               <div class="panel-footer">
-                <a data-original-title="Make a post" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-file"></i></a>
+                <a href="#" type="button" class="btn btn-sm btn-warning">Make a new post</a>
                 <span class="pull-right">
-                            <a href="{{ route('users.edit') }}" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                  <a href="{{ route('users.edit') }}" type="button" class="btn btn-sm btn-warning">Edit user profile</a>
                 </span>
               </div>
             </div>

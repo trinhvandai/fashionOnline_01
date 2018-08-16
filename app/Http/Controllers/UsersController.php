@@ -82,7 +82,7 @@ class UsersController extends Controller
         $user->password = bcrypt($request->get('password'));
         $user->image_url = '/images/home/' . $request->get('image_url');
         $user->save();
-        return redirect(action('UserController@show'))->with('status', 'User profile has been updated!');
+        return redirect(action('UsersController@show'))->with('status', 'User profile has been updated!');
     }
 
     /**

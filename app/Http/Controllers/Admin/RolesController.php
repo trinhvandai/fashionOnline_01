@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Http\Requests\RoleFormRequest;
 use Spatie\Permission\Models\Role;
-use App\Http\Requests\AdminUserEditFormRequest;
-use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Permission;
 
-class UsersController extends Controller
+class RolesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('backend.users.index', compact('users'));
+        $roles = Role::all();
+        return view('backend.roles.index', compact('roles'));
     }
 
     /**
@@ -29,7 +28,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.roles.create');
     }
 
     /**
@@ -38,9 +37,10 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleFormRequest $request)
     {
-        //
+        Role::create(['name' => $request->get('name')]);
+        return redirect('/admin/roles/create')->with('status', 'A new role has been created!');
     }
 
     /**
@@ -62,10 +62,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::whereId($id)->firstOrFail();
-        $roles = Role::all();
-        $selectedRoles = $user->roles()->pluck('name')->toArray();
-        return view('backend.users.edit', compact('user', 'roles', 'selectedRoles'));
+        //
     }
 
     /**
@@ -75,20 +72,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id, AdminUserEditFormRequest $request)
+    public function update(Request $request, $id)
     {
-        $user = User::whereId($id)->firstOrFail();
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-        $password = $request->get('password');
-        if ($password != "") {
-            $user->password = Hash::make($password);
-        }
-        $user->save();
-        $user->syncRoles($request->get('role'));
-
-        return redirect(action('Admin\UsersController@index'))->with('status', '
-        The user has been updated!');
+        //
     }
 
     /**

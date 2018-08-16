@@ -24,13 +24,13 @@ class UserEditFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:3',
-            'email' => 'required|string|email|max:255|unique:users',
-            'description' => 'string|max:255',
-            'address' => 'string|max:255',
-            'phone' => 'digits:11',
-            'password' => 'required|string|min:6|same:password_confirmation',
-            'password_confirmation' => 'required|string|min:6',
+            // 'name' => 'required|min:3',
+            // 'email' => 'required|string|email|max:255|unique:users',
+            // 'description' => 'string|max:255',
+            // 'address' => 'string|max:255',
+            // 'phone' => 'digits:11',
+            // 'password' => 'required|string|min:6|same:password_confirmation',
+            // 'password_confirmation' => 'required|string|min:6',
         ];
     }
 }
