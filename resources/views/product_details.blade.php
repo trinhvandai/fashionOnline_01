@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')  
-<section id="advertisement">
-    <div class="container">
-        <img src="{{asset('images/shop/advertisement.jpg')}}" alt="" />
-    </div>
-</section>
+<!-- <section id="advertisement"> -->
+    <!-- <div class="container"> -->
+        <!-- <img src="{{asset('images/shop/advertisement.jpg')}}" alt="" /> -->
+    <!-- </div> -->
+<!-- </section> -->
 
 <section>
     <div class="container">
@@ -20,7 +20,7 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="{{asset('images/product-details/1.jpg')}}" alt="" />
+                            <img src="{{$product->image_url}}" alt="" />
                             <h3>ZOOM</h3>
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">

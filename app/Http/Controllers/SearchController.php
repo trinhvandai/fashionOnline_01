@@ -7,9 +7,14 @@ use App\Product;
 
 class SearchController extends Controller
 {
-    public function find(Request $Request)
+    public function search(Request $request)
     {
-    	$product=Product::where('name','like','%' .$Request->get('q').'%')->get();
-    	return response()->json($product);
+    	// $find_string = $request->get('find_string');
+    	$product=Product::where('name','like','%' .$request->get('find_string').'%')->get();
+    	// foreach ($product as $i) {
+    	// 	echo $i->name;
+    	// 	# code...
+    	// }
+        return view('search',compact('product'));
     }
 }

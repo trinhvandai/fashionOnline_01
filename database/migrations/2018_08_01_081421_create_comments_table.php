@@ -22,8 +22,9 @@ class CreateCommentsTable extends Migration
                 ->onDelete('cascade');
             $table->string('title')->nullable();
             $table->string('content');
-            $table->integer('post_or_product_id')->unsigned();
-            $table->string('type');
+            $table->integer('post_id')->unsigned();
+            $table->integer('product_id')->unsigned()->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
 
         });

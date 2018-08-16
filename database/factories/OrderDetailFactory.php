@@ -13,8 +13,16 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Brand::class, function (Faker $faker) {
+$factory->define(App\OrderDetail::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'sub_price' => $faker->buildingNumber,
+        'product_id' => function () {
+            return factory(App\Product::class)->create()->id;
+        },
+        'order_id' =>function () {
+            return factory(App\OrderDetail::class)->create()->id;
+        },
+        'created_at' => new DateTime,
+        'updated_at' => new DateTime,     
     ];
 });

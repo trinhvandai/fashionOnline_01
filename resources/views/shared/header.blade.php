@@ -94,10 +94,11 @@
                         </div>
                         <div class="col-sm-3">
                             <div class="search_box ">
-                            <form action="{{route('find')}" method="get">
-                                <input type="text" placeholder="Search" />
+                            <form action="{{url('search')}}" method="get">
+                                {{ csrf_field() }}
+                                <input type="text" placeholder="Search" name="find_string" />
 
-                               <div class="col-sm-2"> <button type="submit">Search</button></div>
+                                <button class="fa fa-search" type="submit" id="search_submit">Search</button>
                             </form> 
                             </div>
                         </div>

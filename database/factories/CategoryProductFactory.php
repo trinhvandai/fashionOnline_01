@@ -13,15 +13,15 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Product::class, function (Faker $faker) {
+$factory->define(App\CategoryProduct::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'title'=>$faker->title,
-        'description'=>$faker->name,
-         'price'=>$faker->buildingNumber,
-      'brand_id' =>function () {
-            return factory(App\Brand::class)->create()->id;
+        'category_id'  => function () {
+            return factory(App\Category::class)->create()->id;
         },
-       'image_url'=>$faker->image,
+        'product_id' => function () {
+            return factory(App\Product::class)->create()->id;
+        },
+       'created_at' => new DateTime,
+        'updated_at' => new DateTime,     
     ];
 });

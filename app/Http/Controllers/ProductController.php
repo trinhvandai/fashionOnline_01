@@ -19,11 +19,20 @@ class ProductController extends Controller
     }
     public function products()
     {
+        // $products = DB::table('products')->paginate(9);
+        $products=Product::paginate(6);
+    	 return view('products',['products' => $products]);
 
-    	 return view('products', array('title' => 'Products Listing','description' => '','page' => 'products', 'brands' => $this->brands, 'categories' => $this->categories, 'products' => $this->products));
     }
     public function product_details($id) {
         $product = Product::find($id);
         return view('product_details', array('product' => $product, 'title' => $product->name,'description' => '','page' => 'products', 'brands' => $this->brands, 'categories' => $this->categories, 'products' => $this->products));
+    }
+     public function category_product()
+    {
+        // $products = DB::table('products')->paginate(9);
+        $products=Product::paginate(6);
+         return view('category_products',['products' => $products]);
+
     }
 }

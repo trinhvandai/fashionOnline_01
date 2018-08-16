@@ -60,11 +60,11 @@
                                 <div id="womens" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul>
-                                            <li><a href="#">Fendi</a></li>
-                                            <li><a href="#">Guess</a></li>
-                                            <li><a href="#">Valentino</a></li>
-                                            <li><a href="#">Dior</a></li>
-                                            <li><a href="#">Versace</a></li>
+                                            <li><a href="{{('category_products')}}">Quần Short</a></li>
+                                            <li><a href="#">Quần Dài</a></li>
+                                            <li><a href="#">Váy</a></li>
+                                            <li><a href="#">Áo Phông</a></li>
+                                            <li><a href="#">Áo Sơ Mi </a></li>
                                         </ul>
                                     </div>
                                 </div>
