@@ -1,5 +1,6 @@
 {
     "Password": "Password",
+    "Update your profile":"Update your profile",
     "Remember me":"Remember me",
     "Forgot Your Password?":"Forgot Your Password?",
     "Send Password Reset Link":"Send Password Reset Link",
@@ -8,6 +9,7 @@
     "New User Signup!":"New User Signup!",
     "Login to your account":"Login to your account",
     "Login":"Login",
+    "Logout":"Logout",
     "Sign up":"Sign up",
     "Your email address":"Your email address",
     "Confirm password":"Confirm password",

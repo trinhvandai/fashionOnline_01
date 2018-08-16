@@ -1,5 +1,6 @@
 {
     "Password": "Mật khẩu",
+    "Update your profile":"Cập nhật thông tin cá nhân",
     "Remember me":"Nhớ tôi",
     "Forgot Your Password?":"Quên mật khẩu?",
     "Send Password Reset Link":"Gửi link reset mật khẩu",
@@ -8,6 +9,7 @@
     "New User Signup!":"Đăng kí tài khoản mới",
     "Login to your account":"Đăng nhập vào tài khoản của bạn",
     "Login":"Đăng nhập",
+    "Logout":"Đăng xuất",
     "Sign up":"Đăng kí",
     "Your email address":"Địa chỉ email của bạn",
     "Confirm password":"Xác nhận mật khẩu",

@@ -15,14 +15,25 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
+Route::get('users/show', ['as' => 'users.show', 'uses' => 'UsersController@show']);
 
-Route::group(['middleware' => 'locale'], function () {
-    Route::get('change-language/{language}', 'HomeController@changeLanguage')
-        ->name('user.change-language');
-});
+Route::get('users/edit', ['as' => 'users.edit', 'uses' => 'UsersController@edit']);
+Route::post('users/edit', ['as' => 'users.update', 'uses' => 'UsersController@update']);
 
 Auth::routes();
+
+Route::resource('posts', 'PostsController');
+
+Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'), function () {
+    Route::get('/', 'PagesController@home');
+    Route::get('/users', 'UsersController@index');
+    Route::get('/users/{id?}/edit', 'UsersController@edit');
+    Route::post('/users/{id?}/edit', 'UsersController@update');
+
+    Route::get('roles', 'RolesController@index');
+    Route::get('roles/create', 'RolesController@create');
+    Route::post('roles/create', 'RolesController@store');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('auth/update','ProfileController@edit');

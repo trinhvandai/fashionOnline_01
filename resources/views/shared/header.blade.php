@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="logo pull-left">
-                                <a href="#"><img src="{{ asset('images/home/logo.png') }}" alt="" /></a>
+                                <a href="{{ route('home') }}"><img src="{{ asset('images/home/logo.png') }}" alt="" /></a>
                             </div>
                             <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -39,8 +39,8 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{!! route('user.change-language', ['vi']) !!}">Tiếng Việt</a></li>
-                                    <li><a href="{!! route('user.change-language', ['en']) !!}">English</a></li>
+                                    <li><a href="">Tiếng Việt</a></li>
+                                    <li><a href="">English</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -48,6 +48,7 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
+<<<<<<< HEAD
                                     <li><a href="{{url('auth/update')}}"><i class="fa fa-user"></i> {{Auth::check() ? Auth::user()->name : __('Account')}}</a></li>
                                     <li><a href="#"><i class="fa fa-star"></i> {{ __('Wishlist') }}</a></li>
                                     <li><a href="#"><i class="fa fa-crosshairs"></i> {{ __('Checkout') }}</a></li>
@@ -64,6 +65,20 @@
                                     <li><a href="{{('login')}}">{{ __('Login') }}</a></li>
                                     @endif
                                     
+=======
+                                    <li><a href="{{ Auth::check() ? route('users.show') : route('login') }}"><i class="fa fa-user"></i> {{ Auth::check() ? Auth::user()->name : __('Account') }}</a></li>
+                                    <li><a href=""><i class="fa fa-star"></i> {{ __('Wishlist') }}</a></li>
+                                    <li><a href="#"><i class="fa fa-crosshairs"></i> {{ __('Checkout') }}</a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i> {{ __('Cart') }}</a></li>
+                                    @if(Auth::check())
+                                    <li><a href = "{{ route('logout') }}" onclick= "event.preventDefault();
+                                        document.getElementById('logout-form').submit(); "><i class="fa fa-lock"></i> {{ __('Logout') }}</a>
+                                        {!! Form::open(array('route' => 'logout' , 'method' => 'POST' , 'id' => 'logout-form' , 'style' => 'display: none;' )) !!}
+                                        {!! Form::close() !!}
+                                    @else
+                                    <li><a href= "{{ route('login') }}"><i class="fa fa-lock"></i> {{ __('Login') }}</a></li>
+                                    @endif
+>>>>>>> 67dd67153f16cdc53dfcdfaa1e04f3dfabe55f93
                                 </ul>
                             </div>
                         </div>
@@ -85,9 +100,15 @@
                             </div>
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
+<<<<<<< HEAD
                                     <li><a href="{{route('home')}}" >{{ __('Home') }}</a></li>
                                     <li><a href="{{('products')}}" >{{ __('Products') }}</a></li>
                                     <li><a href="#" >{{ __('Blog') }}</a></li>
+=======
+                                    <li><a href="{{ route('home') }}" >{{ __('Home') }}</a></li>
+                                    <li><a href="#" >{{ __('Products') }}</a></li>
+                                    <li><a href="{{ route('posts.index') }}" >{{ __('Blog') }}</a></li>
+>>>>>>> 67dd67153f16cdc53dfcdfaa1e04f3dfabe55f93
                                     <li><a href="#" >{{ __('Contact Us') }}</a></li>
                                 </ul>
                             </div>

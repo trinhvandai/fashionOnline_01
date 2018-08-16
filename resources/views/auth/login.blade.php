@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -66,4 +67,33 @@
         </div>
     </div>
 </div>
+=======
+<section id="form"><!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="login-form"><!--login form-->
+                    <h2>{{ __('Login to your account') }}</h2>
+                    {!! Form::open(['method' => 'POST' , 'route' => 'login']) !!}
+                        @foreach ($errors->all() as $error)
+                        <p class="alert alert-danger">{{ $error }}</p>
+                        @endforeach
+                    {!! Form::text( 'email', null, ['type' => 'email' , 'class' => 'form-control' ,  'placeholder' => __('Your email address') ]); !!}
+                     {!! Form::password('password', ['class' => 'form-control' , 'placeholder' => __('Password') ] ) !!}
+                    <span>
+                        {!! Form::checkbox( 'remember', null ); !!}
+                        {{ __('Remember me') }}
+                    </span>
+                    {{ Form::button('Sign in', ['type' => 'submit', 'class' => 'btn btn-default'] )  }}
+                    {!! Form::close() !!}
+                    </div><!--/login form-->
+                    <div class="btn-toolbar" role="toolbar" aria-label="...">
+                        <a class="btn btn-link" href="{{ route('password.request') }}"> {{ __('Forgot Your Password?') }}</a>
+                        <a class="btn btn-link" href="{{ route('register') }}"> {{ __('Sign up') }}</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section><!--/form-->
+>>>>>>> 67dd67153f16cdc53dfcdfaa1e04f3dfabe55f93
 @endsection

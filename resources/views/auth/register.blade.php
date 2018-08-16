@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+<<<<<<< HEAD
 @section('content')
 <div class="container">
     <div class="row">
@@ -69,9 +70,33 @@
                             </div>
                         </div>
                     </form>
+=======
+@section('title', 'Login page')
+@section('content')
+<section id="form"><!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="signup-form">
+                    <h2>{{ __('New User Signup!') }}</h2>
+                    {!! Form::open(['method' => 'POST' , 'route' => 'register']) !!}
+                        @foreach ($errors->all() as $error)
+                        <p class="alert alert-danger">{{ $error }}</p>
+                        @endforeach
+                    {!! Form::text( 'name', null, ['placeholder' => __('Your name') ]); !!}
+                    {!! Form::email( 'email', null, ['placeholder' => __('Your email address') ]); !!}
+                    {!! Form::password( 'password', null , ['placeholder' => __('Password') ]); !!}
+                    {!! Form::password( 'password_confirmation' , null , ['placeholder' => __('Confirm password') ]); !!}
+                    {{ Form::button('Sign up', ['type' => 'submit', 'class' => 'btn btn-default'] )  }}
+                    {!! Form::close() !!}
+>>>>>>> 67dd67153f16cdc53dfcdfaa1e04f3dfabe55f93
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
+=======
+</section><!--/form-->
+>>>>>>> 67dd67153f16cdc53dfcdfaa1e04f3dfabe55f93
 @endsection
