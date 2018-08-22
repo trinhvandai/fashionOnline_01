@@ -22,6 +22,6 @@ $factory->define(App\Product::class, function (Faker $faker) {
       'brand_id' =>function () {
             return factory(App\Brand::class)->create()->id;
         },
-       'image_url'=>$faker->image,
+     'image_url' => $faker->randomElement(['images/blog/product1.jpg' ,'images/blog/product2.jpg', 'images/blog/product3.jpg', 'images/blog/product4.jpg', 'images/blog/product5.jpg' ,'images/blog/product6.jpg'])
     ];
 });

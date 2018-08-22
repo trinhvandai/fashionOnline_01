@@ -94,12 +94,17 @@
                         </div>
                         <div class="col-sm-3">
                             <div class="search_box ">
-                            <form action="{{url('search')}}" method="get">
+                                <form  class="typeahead" role="search">
+                                   <div class="form-group">
+                                      <input type="search" name="q" class="form-control" placeholder="Search" autocomplete="off">
+                                   </div>
+                                </form>
+                            <!-- <form action="{{url('search')}}" method="get">
                                 {{ csrf_field() }}
                                 <input type="text" placeholder="Search" name="find_string" />
 
                                 <button class="fa fa-search" type="submit" id="search_submit">Search</button>
-                            </form> 
+                            </form>  -->
                             </div>
                         </div>
                     </div>

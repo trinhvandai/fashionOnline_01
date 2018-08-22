@@ -16,7 +16,7 @@ use Faker\Generator as Faker;
 $factory->define(App\Comment::class, function (Faker $faker) {
     return [
     	'title'=> $faker->title,
-    	'content' => $faker->title,
+    	'content' => $faker->name,
         'post_id'  => function () {
             return factory(App\Post::class)->create()->id;
         },
